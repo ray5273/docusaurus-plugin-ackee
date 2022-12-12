@@ -8,7 +8,7 @@ export default (function bar() {
 
   return {
     onRouteUpdate() {
-      if (ackeeTracker) {
+      if (typeof ackeeTracker != "undefined") {
         // eslint-disable-next-line no-undef
         ackeeTracker
           .create(ackeeServer, {

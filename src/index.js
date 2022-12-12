@@ -60,7 +60,7 @@ module.exports = function foo(context, options) {
           {
             tagName: "script",
             innerHTML: `
-            if (ackeeTracker) {
+            if (typeof ackeeTracker != 'undefined') {
               var ackeeServer = '${server}';
               var ackeeDomainId = '${domainId}';
               var ackeeDetailed = ${detailed};
