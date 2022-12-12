@@ -22,7 +22,7 @@
   "contibutors": [{
     "name": "Qian Hum",
     "url": "https://github.com/qianhum"
-  }]
+  }],
   "repository": {
     "type": "git",
     "url": "https://github.com/ArchGryphon9362/docusaurus-plugin-ackee.git"
