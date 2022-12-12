@@ -1,5 +1,8 @@
 # docusaurus-plugin-ackee
 
+> **Note**
+> Modified to fix the "ackeeTracker is not defined" bug!
+
 Use [Ackee](https://github.com/electerious/Ackee) in your [Docusaurus](https://github.com/facebook/docusaurus) site.
 
 Requires a running Ackee server.
@@ -23,14 +26,14 @@ npm install docusaurus-plugin-ackee
 module.exports = {
   plugins: [
     [
-      'docusaurus-plugin-ackee',
+      "docusaurus-plugin-ackee",
       {
         // Ackee domain ID
-        domainId: 'your_ackee_domain_id',
+        domainId: "your_ackee_domain_id",
 
         // URL to your Ackee server
         // MUST NOT END WITH SLASH ('/')
-        server: 'https://analytics.example.com',
+        server: "https://analytics.example.com",
 
         // Enable or disable tracking of personal data (OS, device, browser, screen size, user language)
         detailed: false,
@@ -45,11 +48,11 @@ module.exports = {
 
         // Ackee tracker file name
         // More information can be found [here](https://github.com/electerious/Ackee/blob/master/docs/Options.md#tracker)
-        ackeeTrackerFile: 'tracer.js',
+        ackeeTrackerFile: "tracer.js",
       },
     ],
   ],
-}
+};
 ```
 
 ## License
