@@ -1,5 +1,5 @@
 {
-  "name": "docusaurus-plugin-ackee",
+  "name": "docusaurus-plugin-ackee-improved",
   "version": "0.0.0",
   "description": "Ackee analytics plugin for Docusaurus",
   "license": "MIT",
@@ -14,17 +14,21 @@
   "files": [
     "src"
   ],
-  "homepage": "https://github.com/qianhum/docusaurus-plugin-ackee",
+  "homepage": "https://github.com/ArchGryphon9362/docusaurus-plugin-ackee",
   "author": {
+    "name": "Lex Nastin",
+    "url": "https://github.com/ArchGryphon9362"
+  },
+  "contibutors": [{
     "name": "Qian Hum",
     "url": "https://github.com/qianhum"
-  },
+  }]
   "repository": {
     "type": "git",
-    "url": "https://github.com/qianhum/docusaurus-plugin-ackee.git"
+    "url": "https://github.com/ArchGryphon9362/docusaurus-plugin-ackee.git"
   },
   "bugs": {
-    "url": "https://github.com/qianhum/docusaurus-plugin-ackee/issues"
+    "url": "https://github.com/ArchGryphon9362/docusaurus-plugin-ackee/issues"
   },
   "devDependencies": {
     "eslint": "^7.20.0",
