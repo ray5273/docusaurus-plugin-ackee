@@ -10,13 +10,13 @@ Requires a running Ackee server.
 ## Install
 
 ```zsh
-yarn add docusaurus-plugin-ackee
+yarn add docusaurus-plugin-ackee-improved
 ```
 
 or
 
 ```zsh
-npm install docusaurus-plugin-ackee
+npm install docusaurus-plugin-ackee-improved
 ```
 
 ## Usage
@@ -26,7 +26,7 @@ npm install docusaurus-plugin-ackee
 module.exports = {
   plugins: [
     [
-      "docusaurus-plugin-ackee",
+      "docusaurus-plugin-ackee-improved",
       {
         // Ackee domain ID
         domainId: "your_ackee_domain_id",
