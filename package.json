@@ -1,6 +1,6 @@
 {
   "name": "docusaurus-plugin-ackee-improved",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Ackee analytics plugin for Docusaurus",
   "license": "MIT",
   "keywords": [
