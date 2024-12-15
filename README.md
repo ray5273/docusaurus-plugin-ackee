@@ -1,4 +1,4 @@
-# docusaurus-plugin-ackee
+# docusaurus-plugin-ackee-v3
 
 > **Note**
 > Modified to fix the "ackeeTracker is not defined" bug!
@@ -7,16 +7,18 @@ Use [Ackee](https://github.com/electerious/Ackee) in your [Docusaurus](https://g
 
 Requires a running Ackee server.
 
+Tested with Docusaurus v3.5.2 and Ackee v3.4.2
+
 ## Install
 
 ```zsh
-yarn add docusaurus-plugin-ackee-improved
+yarn add docusaurus-plugin-ackee-v3
 ```
 
 or
 
 ```zsh
-npm install docusaurus-plugin-ackee-improved
+npm install docusaurus-plugin-ackee-v3
 ```
 
 ## Usage
@@ -26,7 +28,7 @@ npm install docusaurus-plugin-ackee-improved
 module.exports = {
   plugins: [
     [
-      "docusaurus-plugin-ackee-improved",
+      "docusaurus-plugin-ackee-v3",
       {
         // Ackee domain ID
         domainId: "your_ackee_domain_id",
@@ -45,10 +47,6 @@ module.exports = {
         // Enabled by default, should be turned off when using a wildcard Access-Control-Allow-Origin header
         // Some browsers may strictly block third-party cookies and this option will have no impact in this situation
         ignoreOwnVisits: true,
-
-        // Ackee tracker file name
-        // More information can be found [here](https://github.com/electerious/Ackee/blob/master/docs/Options.md#tracker)
-        ackeeTrackerFile: "tracer.js",
       },
     ],
   ],
