@@ -1,9 +1,9 @@
-const path = require("path");
+const ackeeTracker = require('ackee-tracker');
 
 module.exports = function foo(context, options) {
   if (!options) {
     throw new Error(
-      "You need to specify Ackee options in docusaurus.config.js"
+        'You need to specify Ackee options in docusaurus.config.js',
     );
   }
 
@@ -11,28 +11,26 @@ module.exports = function foo(context, options) {
     domainId,
     server,
     detailed = false,
-    ignoreLocalhost = true,
-    ignoreOwnVisits = true,
-    ackeeTrackerFile = "tracker.js",
+    ignoreLocalhost = false,
+    ignoreOwnVisits = false,
   } = options;
 
   if (!domainId) {
     throw new Error(
-      "You need to specify Ackee domainId in docusaurus.config.js"
+        'You need to specify Ackee domainId in docusaurus.config.js',
     );
   }
 
   if (!server) {
-    throw new Error("You need to specify Ackee server in docusaurus.config.js");
+    throw new Error('You need to specify Ackee server in docusaurus.config.js');
   }
 
-  const isProd = process.env.NODE_ENV === "production";
+  const isProd = process.env.NODE_ENV === 'production';
 
   return {
-    name: "docusaurus-plugin-ackee-tracker",
-
+    name: 'docusaurus-plugin-ackee-tracker',
     getClientModules() {
-      return isProd ? [path.resolve(__dirname, "./ackee")] : [];
+      return [];
     },
 
     injectHtmlTags() {
@@ -42,37 +40,28 @@ module.exports = function foo(context, options) {
       return {
         headTags: [
           {
-            tagName: "link",
+            tagName: 'link',
             attributes: {
-              rel: "preconnect",
+              rel: 'preconnect',
               href: server,
-            },
-          },
-          {
-            tagName: "script",
-            attributes: {
-              async: true,
-              src: `${server}/${ackeeTrackerFile}`,
             },
           },
         ],
         postBodyTags: [
           {
-            tagName: "script",
-            innerHTML: `
-            if (typeof ackeeTracker != 'undefined') {
-              var ackeeServer = '${server}';
-              var ackeeDomainId = '${domainId}';
-              var ackeeDetailed = ${detailed};
-              var ackeeIgnoreLocalhost = ${ignoreLocalhost};
-              var ackeeIgnoreOwnVisits = ${ignoreOwnVisits};
-              ackeeTracker.create('${server}', {
-                detailed: ${detailed},
-                ignoreLocalhost: ${ignoreLocalhost},
-                ignoreOwnVisits: ${ignoreOwnVisits},
-              }).record('${domainId}');
-            }
-            `,
+            tagName: 'script',
+            attributes: {
+              // eslint-disable-next-line no-template-curly-in-string
+              src: 'http://localhost:3000/tracker.js',
+            },
+          },
+          {
+            tagName: 'script',
+            innerHTML: `ackeeTracker.create('${server}', {
+              detailed: ${detailed},
+              ignoreLocalhost: ${ignoreLocalhost},
+              ignoreOwnVisits: ${ignoreOwnVisits},
+            }).record('${domainId}')`,
           },
         ],
       };

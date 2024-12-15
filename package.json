@@ -37,5 +37,8 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-import-resolver-node": "^0.3.4",
     "eslint-plugin-import": "^2.22.1"
+  },
+  "dependencies": {
+    "ackee-tracker": "^5.1.0"
   }
 }
