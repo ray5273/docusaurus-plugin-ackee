@@ -13,6 +13,7 @@ module.exports = function foo(context, options) {
     detailed = false,
     ignoreLocalhost = false,
     ignoreOwnVisits = false,
+    trackerFileUrl = server + '/tracker.js',
   } = options;
 
   if (!domainId) {
@@ -52,7 +53,7 @@ module.exports = function foo(context, options) {
             tagName: 'script',
             attributes: {
               // eslint-disable-next-line no-template-curly-in-string
-              src: 'http://localhost:3000/tracker.js',
+              src: trackerFileUrl,
             },
           },
           {
